@@ -17,27 +17,27 @@ user.properties
 src/main/resources/windows/nsis/dist/
 
 # Gradle
-build/
+# build/
 #.gradle
 # generated when `gradlew --gui` is called
 ui/
-gradle-app.setting
+# gradle-app.setting
 
 # Netbeans
 nbproject/private/
 
 # IntelliJ IDEA
-out/
-*.iws
+# out/
+# *.iws
 .idea/
 *.ipr
 *.iml
 
 # Eclipse
 #.settings/
-#.classpath
-#.project
-#bin/
+.classpath
+.project
+# bin/
 
 # For Mac OS
 .DS_Store
