@@ -37,7 +37,7 @@ nbproject/private/
 #.settings/
 .classpath
 .project
-# bin/
+bin/
 
 # For Mac OS
 .DS_Store
