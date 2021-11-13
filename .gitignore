@@ -18,7 +18,7 @@ src/main/resources/windows/nsis/dist/
 
 # Gradle
 build/
-.gradle
+#.gradle
 # generated when `gradlew --gui` is called
 ui/
 gradle-app.setting
@@ -34,10 +34,10 @@ out/
 *.iml
 
 # Eclipse
-.settings/
-.classpath
-.project
-bin/
+#.settings/
+#.classpath
+#.project
+#bin/
 
 # For Mac OS
 .DS_Store
