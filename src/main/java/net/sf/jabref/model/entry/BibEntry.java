@@ -36,11 +36,14 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 
+
 import net.sf.jabref.model.database.BibDatabase;
 
 import com.google.common.base.Strings;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import javax.swing.JOptionPane;
 
 public class BibEntry {
     private static final Log LOGGER = LogFactory.getLog(BibEntry.class);
@@ -358,6 +361,22 @@ public class BibEntry {
         }
 
         String fieldName = toLowerCase(name);
+
+        // editions made by @moraex
+        // bibtexkey entry validation
+        // this.KEY_FIELD == "bibtexkey"
+        if (fieldName.equals(this.KEY_FIELD)) {
+
+            // if the wrong pattern is match, so
+            // the treatment must be applied
+            if ((value.length() < 2) || Character.isDigit(value.charAt(0))) {
+                JOptionPane.showMessageDialog(null,
+                        "O campo bibtexkey deve\n" + "ter 2 ou mais caracteres\n" + "Nao iniciar com digito",
+                        "Bibtexkey erro", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+        }
 
         if (BibEntry.ID_FIELD.equals(fieldName)) {
             throw new IllegalArgumentException("The field name '" + name + "' is reserved");
