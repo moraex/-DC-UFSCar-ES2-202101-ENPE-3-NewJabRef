@@ -15,8 +15,7 @@ public class CSVImporter extends ImportFormat {
 
     @Override
     public boolean isRecognizedFormat(InputStream in) throws IOException {
-        // TODO Auto-generated method stub
-        return false;
+        return true;
     }
 
     @Override
@@ -38,21 +37,22 @@ public class CSVImporter extends ImportFormat {
                 }
             }
         }
-
-
         return bibitems;
     }
 
     @Override
     public String getFormatName() {
-        // TODO Auto-generated method stub
         return "CSV";
     }
 
     @Override
     public String getExtensions() {
-        // TODO Auto-generated method stub
         return "csv";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Importer for CSV format.";
     }
 
 }
