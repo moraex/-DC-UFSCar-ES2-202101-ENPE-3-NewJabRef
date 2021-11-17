@@ -1,3 +1,32 @@
+# Trabalho prático de Engenharia de Software 2 - Sistema JabRef
+> Este trabalho tem como objetivo realizar testes e manutenção do sistema JabRef, uma ferramenta de software gráfico para gerenciamento de referências bibliográficas em LaTeX, programado em linguagem Java, afim de garantir o aprenzidado do uso de ferramentas para teste de software durante o semestre 2021/1 da Universidade Federal de São Carlos (UFSCar).
+
+## Membros do grupo:
+> Alisson Roberto Gomes, https://github.com/alissongomes
+> Luan Vinicius Moraes, https://github.com/moraex
+> Júlia Almeida, https://github.com/kaarpage
+> Isabella Costa, https://github.com/isabellacp
+> José Alfredo Custodio, 
+> Thiago Araujo Campos, https://github.com/thiagoaraujocampos
+> Bruno Leonel Nunes, https://github.com/Bruno12leonel
+
+## Ferramentas utilizadas: 
+> IDE Eclipse versão 2021-09
+> Java versão 1.8
+> Github
+
+## Testes e Manutenções Perfectivas
+> -> Inserção e importação de itens bibliográficos
+> Para as categorias book e article:
+- [x] Verificação do campo Year, para que seja válido de acordo com o calendário Java;
+- [x] Verificação do campo Bibtexkey, para que tenha no mínimo dois caracteres, sendo o primeiro caractere uma letra (maíscula ou minúscula);
+
+Para a importação de itens bibliográficos na base corrente:
+- [x] Opção de importar arquivo no formato CSV
+
+
+> Informações sobre o sistema JabRef abaixo:
+
 # JabRef Development Version
 
 [![Build Status](https://travis-ci.org/JabRef/jabref.svg?branch=master)](https://travis-ci.org/JabRef/jabref)
