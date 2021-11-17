@@ -26,14 +26,14 @@
 > Github
 
 ## Testes e Manutenções Perfectivas
-> -> Inserção e importação de itens bibliográficos
+* Inserção e importação de itens bibliográficos
 
 
-> Para as categorias book e article:
+* Para as categorias book e article:
      - [x] Verificação do campo Year, para que seja válido de acordo com o calendário Java;
      - [x] Verificação do campo Bibtexkey, para que tenha no mínimo dois caracteres, sendo o primeiro caractere uma letra (maíscula ou minúscula);
 
-> Para a importação de itens bibliográficos na base corrente:
+* Para a importação de itens bibliográficos na base corrente:
      - [x] Opção de importar arquivo no formato CSV
 
 
