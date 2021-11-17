@@ -8,14 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * This class tests the BibtexImporter.
- * That importer is only used for --importToOpen, which is currently untested
- * <p>
- * TODO:
- * 1. Add test for --importToOpen
- * 2. Move these tests to the code opening a bibtex file
- */
+
 public class CSVImporterTest {
 
     private CSVImporter importer;
@@ -31,11 +24,6 @@ public class CSVImporterTest {
         try (InputStream stream = BibtexImporterTest.class.getResourceAsStream("CSVImporterTest.csv")) {
             assertTrue(importer.isRecognizedFormat(stream));
         }
-    }
-
-    @Test
-    public void testImportEntries() throws IOException {
-
     }
 
     @Test
