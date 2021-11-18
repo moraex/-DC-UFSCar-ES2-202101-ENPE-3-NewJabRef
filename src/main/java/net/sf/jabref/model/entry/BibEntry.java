@@ -70,6 +70,15 @@ public class BibEntry {
     private boolean changed;
 
 
+    //verifica se o ano é válido
+    static boolean isValidYear(int yy) {
+        if ((yy / 1000) > 10) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     /**
      * Constructs a new BibEntry. The internal ID is set to IdGenerator.next()
      */
@@ -363,6 +372,24 @@ public class BibEntry {
             throw new IllegalArgumentException("The field name '" + name + "' is reserved");
         }
 
+        /***************************************************************************************************************************
+         *                                   Year validation according to Java's calendar
+         ***************************************************************************************************************************/
+
+        if (fieldName.equals("year")) {
+            try {
+                int ano = Integer.parseInt(value);
+                if (ano <= 0) {
+                    throw new IllegalArgumentException("The year must be greater than zero");
+                }
+                else if (isValidYear(ano) == false) {
+                    throw new IllegalArgumentException("The year does not exists");
+                }
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("The year must be an integer number");
+            }
+        }
+
         changed = true;
 
         String oldValue = fields.get(fieldName);
@@ -414,6 +441,7 @@ public class BibEntry {
      *                  argument can be null, meaning that no attempt will be made to follow crossrefs.
      * @return true if all fields are set or could be resolved, false otherwise.
      */
+
     public boolean allFieldsPresent(List<String> allFields, BibDatabase database) {
         final String orSeparator = "/";
 
