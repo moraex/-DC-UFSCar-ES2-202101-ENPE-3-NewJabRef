@@ -3,6 +3,7 @@ package net.sf.jabref.model.entry;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
@@ -136,6 +137,23 @@ public class BibtexEntryTests {
                 (BibtexParser.singleFromString("@ARTICLE{HipKro03, year = {2003}, month = #DEC# }"))
                         .getPublicationDate());
 
+    }
+
+    //TESTE 1: Inserir ano menor que zero.
+    @Test
+    public void testeYearBelowZero() {
+        Assert.assertEquals(null,
+                (BibtexParser.singleFromString("@ARTICLE{Anything, year = {-1}}")).getPublicationDate());
+
+    }
+
+    //TESTE 2: Inserir ano no futuro
+    @Test
+    public void testYearInTheFuture()  {
+        int current_year = Calendar.getInstance().get(Calendar.YEAR);
+        Assert.assertEquals(null,
+                (BibtexParser.singleFromString("@ARTICLE{Anything, year = {" + current_year + 1 + "}}"))
+                        .getPublicationDate());
     }
 
     @Test
