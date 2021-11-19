@@ -72,7 +72,8 @@ public class BibEntry {
 
     //verifica se o ano é válido
     static boolean isValidYear(int yy) {
-        if ((yy / 1000) > 10) {
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        if (yy > year) {
             return false;
         } else {
             return true;
@@ -377,17 +378,23 @@ public class BibEntry {
          ***************************************************************************************************************************/
 
         if (fieldName.equals("year")) {
+            int ano = -1;
             try {
-                int ano = Integer.parseInt(value);
-                if (ano <= 0) {
-                    throw new IllegalArgumentException("The year must be greater than zero");
-                }
-                else if (isValidYear(ano) == false) {
-                    throw new IllegalArgumentException("The year does not exists");
-                }
+                ano = Integer.parseInt(value);
+
             } catch (NumberFormatException e) {
-                throw new IllegalArgumentException("The year must be an integer number");
+                //throw new IllegalArgumentException("The year must be an integer number");
+                clearField("year");
+
             }
+            if (ano <= 0) {
+                //throw new IllegalArgumentException("The year must be greater than zero");
+                clearField("year");
+            } else if (isValidYear(ano) == false) {
+                //throw new IllegalArgumentException("The year does not exists");
+                clearField("year");
+            }
+
         }
 
         changed = true;
